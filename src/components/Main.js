@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import Photo from './Photo'
 import NetworkIcon from './NetworkIcon'
+import InfoText from './InfoText'
+import Categorie from './Categorie'
 
 import utils from '../utils'
 
@@ -11,7 +13,7 @@ const CenterPart = styled.div`
   background-color: ${utils.themeColor};
 
   display: grid;
-  grid-template-rows: 500px auto;
+  grid-template-rows: 550px auto;
 `
 
 const Header = styled.header`
@@ -22,35 +24,64 @@ const Header = styled.header`
 const LeftHeader = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
+  grid-column-gap: 20px;
 
-  width: 100%;
+  padding: 20px;
+`
+
+const RightHeader = styled.div`
+  display: grid;
+  grid-template-rows: 50px auto;
+
+  padding: 20px;
 `
 
 const PhotoPart = styled.div`
-  padding: 20px;
-  width: 100%;
 
   display: grid;
-  grid-template-rows: 450px auto;
+  grid-template-rows: auto 100px;
+`
+
+const ContainerNetworkIcon = styled.div`
+  padding: 20px 0px;
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 20px;
+`
+
+const InfoPart = styled.div`
+  padding: 20px 0px;
+`
+
+const CategoriesPart = styled.div`
+  display: grid;
+  grid-auto-columns: auto;
 `
 
 function Main() {
   return (
     <CenterPart className='centerPart'>
       <Header className='header'>
-      <LeftHeader className='leftHeader'>
-        <PhotoPart className='photoPart'>
-          <Photo></Photo>
-          <div>
-            <NetworkIcon>
-            </NetworkIcon>
-          </div>
-        </PhotoPart>
-        <div>
-
-        </div>
-      </LeftHeader>
-        <div></div>
+        <LeftHeader className='leftHeader'>
+          <PhotoPart className='photoPart'>
+            <Photo></Photo>
+            <ContainerNetworkIcon>
+              <NetworkIcon href={`mailto:${utils.email}`} src='../../at.svg' alt='email' />
+              <NetworkIcon href={utils.linkedin} src='../../linkedin.svg' alt='linkedin' />
+              <NetworkIcon href={utils.github} src='../../github.svg' alt='github' />
+            </ContainerNetworkIcon>
+          </PhotoPart>
+          <InfoPart>
+            {utils.infoText.map((text, ind) => <InfoText key={`infoText_${ind}`}>{text}</InfoText>)}
+          </InfoPart>
+        </LeftHeader>
+        <RightHeader>
+          <CategoriesPart>
+            <Categorie>Home</Categorie>
+          </CategoriesPart>
+          <div></div>
+        </RightHeader>
       </Header>
       <div></div>
     </CenterPart>
