@@ -7,6 +7,16 @@ import Main from './components/Main'
 const LeftPart = styled.div`
 clip-path: circle(600px at 100% 0);
 background-color: ${utils.themeColor};
+
+@media screen and ${utils.deviceScreen.laptopL} {
+  display: none;
+}
+`
+
+const RightPart = styled.div`
+  @media screen and ${utils.deviceScreen.laptopL} {
+    display: none;
+  }
 `
 
 function App() {
@@ -16,8 +26,8 @@ function App() {
     </LeftPart>
     <Main>
     </Main>
-    <div>
-    </div>
+    <RightPart>
+    </RightPart>
     </Fragment>
   );
 }

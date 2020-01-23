@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import utils from '../utils'
 
 const TextSpan = styled.div`
-font-size: 24px;
+font-size: 1.5em;
+font-weight: bold;
 color: ${utils.white};
 `
 

@@ -3,20 +3,21 @@ import styled from 'styled-components'
 
 import utils from '../utils'
 
-const CategorieText = styled.div`
+const TitleText = styled.div`
   font-size: 1.5em;
   font-weight: bold;
   color: ${utils.black};
-  cursor: pointer;
+  justify-self: center;
+  align-self: center;
   font-family: 'Lora', serif;
 `
 
-function Categorie(props) {
+function Title(props) {
   return (
-    <CategorieText>
+    <TitleText>
       {props.children}
-    </CategorieText>
+    </TitleText>
   )
 }
 
-export default Categorie
+export default Title

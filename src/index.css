@@ -1,12 +1,11 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Average Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100vh;
+  background-color: #f3f4fb;
 }
 
 #root {
@@ -14,5 +13,12 @@ body {
   height: 100%;
 
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 20% auto 20%;
+
+}
+
+@media screen and (max-width: 1440px) {
+  #root {
+    grid-template-columns: initial;
+  }
 }

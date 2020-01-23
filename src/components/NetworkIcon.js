@@ -16,7 +16,7 @@ const BorderIcon = styled.a`
 function NetworkIcon(props) {
   return (
     <BorderIcon href={props.href}>
-      <img style={{width: '40px'}} src={props.src} alt={props.alt}></img>
+      <img style={{width: '30px'}} src={props.src} alt={props.alt}></img>
     </BorderIcon>
   )
 }
