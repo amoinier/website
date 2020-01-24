@@ -8,6 +8,7 @@ import Categorie from './Categorie'
 import Title from './Title'
 import Skill from './Skill'
 import Experience from './Experience'
+import Polygon from './Polygon'
 
 import utils from '../utils'
 
@@ -66,7 +67,7 @@ const CategoriesPart = styled.div`
 
 const AboutMe = styled.div`
   padding: 20px;
-  text-align: center;
+  text-align: justify;
   align-self: center;
   font-size: 1.5em;
   color: ${utils.grey}
@@ -77,12 +78,11 @@ const CategorieContent = styled.div`
 
   display: grid;
   grid-template-rows: auto auto;
-  grid-row-gap: 20px;
+  grid-row-gap: 20px; 
 `
 
 const Content = styled.div`
   color: ${utils.grey};
-  background-color: ${utils.lightwhite};
   padding: 40px;
   border-radius: 4px;
   box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.1);
@@ -102,8 +102,11 @@ justify-content: center;
 
 function Main() {
   return (
-    <CenterPart className='centerPart'>
+    <CenterPart className='centerPart' id='home'>
       <Header className='header'>
+        <Polygon size='600px' top='500px' right='0px' radius='20px' degree='45deg'></Polygon>
+        <Polygon size='300px' top='600px' right='2300px' radius='1000px' degree='0deg' left='0px' color={utils.fifthColor}></Polygon>
+        <Polygon size='600px' top='1000px' left='400px' radius='20px' degree='-90deg' color={utils.fourthColor} clip='polygon(0% 100%, 0% 0%, 2% 0, 100% 98%, 100% 100%)'></Polygon>
         <LeftHeader className='leftHeader'>
           <PhotoPart className='photoPart'>
             <Photo></Photo>
@@ -126,7 +129,7 @@ function Main() {
           </AboutMe>
         </RightHeader>
       </Header>
-      <CategorieContent>
+      <CategorieContent id='skills'>
         <Title>
           Skills
         </Title>
@@ -134,12 +137,12 @@ function Main() {
           {utils.skills.map((skill, ind) => <Skill key={`skill_${ind}`}>{skill}</Skill>)}
         </SkillContent>
       </CategorieContent>
-      <CategorieContent>
+      <CategorieContent id='experience'>
         <Title>
           Experience
         </Title>
-        <Content style={{backgroundColor: utils.white, boxShadow: 'none', borderRadius: '0px', padding: '0px', display: 'grid', gridTemplateColumns: '400px 400px', justifyContent: 'center', gridColumnGap: '20px'}}>
-          {utils.experiences.map((experience, ind) => <Content key={`experience_${ind}`}><Experience data={experience}></Experience></Content>)}
+        <Content style={{boxShadow: 'none', borderRadius: '0px', padding: '0px', display: 'grid', gridTemplateColumns: '400px 400px', justifyContent: 'center', gridColumnGap: '20px'}}>
+          {utils.experiences.map((experience, ind) => <Content key={`experience_${ind}`} style={{background: utils.lightwhite}}><Experience data={experience}></Experience></Content>)}
         </Content>
       </CategorieContent>
       <CategorieContent>

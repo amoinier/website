@@ -9,7 +9,7 @@ const SkillText = styled.div`
   justify-self: center;
   align-self: center;
   color: ${utils.white};
-  background-color: ${utils.secondColor};
+  background-color: ${utils.lightdark};
   padding: 10px;
   width: calc(100% - 20px);
   text-align: center;

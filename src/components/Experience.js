@@ -13,6 +13,7 @@ const LinkView = styled.a`
   text-decoration: none;
   text-align: right;
   color: ${utils.black};
+  background-color: ${utils.lightwhite};
 `
 
 function Experience(props) {

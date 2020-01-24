@@ -6,12 +6,13 @@ import utils from '../utils'
 const Border = styled.div`
   display: grid;
 
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
   background-color: ${utils.white}
 `
 
 const Image = styled.div`
+  border-radius: 5px;
   background-image: url("../../profile.png");
   background-size: cover;
   background-repeat: no-repeat;

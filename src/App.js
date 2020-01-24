@@ -5,8 +5,8 @@ import utils from './utils'
 import Main from './components/Main'
 
 const LeftPart = styled.div`
-clip-path: circle(600px at 100% 0);
-background-color: ${utils.themeColor};
+display: grid;
+grid-template-rows: 600px auto;
 
 @media screen and ${utils.deviceScreen.laptopL} {
   display: none;
@@ -22,12 +22,13 @@ const RightPart = styled.div`
 function App() {
   return (
     <Fragment>
-    <LeftPart>
-    </LeftPart>
-    <Main>
-    </Main>
-    <RightPart>
-    </RightPart>
+      <LeftPart>
+        <div style={{clipPath: 'circle(600px at 100% 0)', backgroundColor: utils.themeColor}}></div>
+      </LeftPart>
+      <Main>
+      </Main>
+      <RightPart>
+      </RightPart>
     </Fragment>
   );
 }

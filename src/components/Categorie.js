@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import utils from '../utils'
 
-const CategorieText = styled.div`
+const CategorieText = styled.a`
   font-size: 1.5em;
   font-weight: bold;
   color: ${utils.black};
@@ -13,7 +13,7 @@ const CategorieText = styled.div`
 
 function Categorie(props) {
   return (
-    <CategorieText>
+    <CategorieText href={`#${props.children.toLowerCase()}`}>
       {props.children}
     </CategorieText>
   )
