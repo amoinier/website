@@ -19,7 +19,7 @@ const LinkView = styled.a`
 function Experience(props) {
   return (
     <React.Fragment>
-      <Title>{props.data.title}</Title>
+      <Title style={{fontSize: '1.25em'}}>{props.data.title}</Title>
       <span>{props.data.date}</span>
       <p>{props.data.desc}</p>
       <LinkView href={props.data.href}>View More...</LinkView>

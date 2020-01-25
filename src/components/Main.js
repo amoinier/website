@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components'
 
 import Photo from './Photo'
@@ -8,13 +8,13 @@ import Categorie from './Categorie'
 import Title from './Title'
 import Skill from './Skill'
 import Experience from './Experience'
-import Polygon from './Polygon'
+import Project from './Project'
 
 import utils from '../utils'
 
 const CenterPart = styled.div`
   display: grid;
-  grid-template-rows: 600px 1fr 1fr 1fr;
+  grid-template-rows: 600px repeat(3, auto);
   grid-row-gap: 10vh;
 `
 
@@ -28,6 +28,7 @@ const LeftHeader = styled.div`
   grid-template-columns: 40% 60%;
   grid-column-gap: 20px;
 
+  width: 600px;
   padding: 20px;
   clip-path: circle(600px at 0% 0);
   background-color: ${utils.themeColor};
@@ -44,7 +45,7 @@ const PhotoPart = styled.div`
   margin-bottom: 50px;
   
   display: grid;
-  grid-template-rows: auto 100px;
+  grid-template-rows: 420px 100px;
 `
 
 const ContainerNetworkIcon = styled.div`
@@ -70,7 +71,7 @@ const AboutMe = styled.div`
   text-align: justify;
   align-self: center;
   font-size: 1.5em;
-  color: ${utils.grey}
+  color: ${utils.lightdark}
 `
 
 const CategorieContent = styled.div`
@@ -82,13 +83,12 @@ const CategorieContent = styled.div`
 `
 
 const Content = styled.div`
-  color: ${utils.grey};
+  color: ${utils.lightdark};
   padding: 40px;
   border-radius: 4px;
   box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.1);
 
   display: grid;
-  gridTemplateRows: auto auto auto auto;
 `
 
 const SkillContent = styled.div`
@@ -101,12 +101,10 @@ justify-content: center;
 `
 
 function Main() {
+
   return (
     <CenterPart className='centerPart' id='home'>
       <Header className='header'>
-        <Polygon size='600px' top='500px' right='0px' radius='20px' degree='45deg'></Polygon>
-        <Polygon size='300px' top='600px' right='2300px' radius='1000px' degree='0deg' left='0px' color={utils.fifthColor}></Polygon>
-        <Polygon size='600px' top='1000px' left='400px' radius='20px' degree='-90deg' color={utils.fourthColor} clip='polygon(0% 100%, 0% 0%, 2% 0, 100% 98%, 100% 100%)'></Polygon>
         <LeftHeader className='leftHeader'>
           <PhotoPart className='photoPart'>
             <Photo></Photo>
@@ -117,38 +115,61 @@ function Main() {
             </ContainerNetworkIcon>
           </PhotoPart>
           <InfoPart>
-            {utils.infoText.map((text, ind) => <InfoText key={`infoText_${ind}`}>{text}</InfoText>)}
+            {utils.infoText.map((text, ind) =>
+              <InfoText key={`infoText_${ind}`}>
+                {text}
+              </InfoText>
+            )}
           </InfoPart>
         </LeftHeader>
         <RightHeader>
           <CategoriesPart>
-            {utils.categories.map((categorie, ind) => <Categorie key={`categorie_${ind}`}>{categorie.name}</Categorie>)}
+            {utils.categories.map((categorie, ind) =>
+              <Categorie key={`categorie_${ind}`}>
+                {categorie.name}
+              </Categorie>
+            )}
           </CategoriesPart>
           <AboutMe>
-            {utils.desc.map((desc, ind) => <p key={`aboutme_${ind}`}>{desc}</p>)}
+            {utils.desc.map((desc, ind) =>
+              <p key={`aboutme_${ind}`}>{desc}</p>
+            )}
           </AboutMe>
         </RightHeader>
       </Header>
-      <CategorieContent id='skills'>
+      <CategorieContent id={utils.categories[1].id}>
         <Title>
-          Skills
+          {utils.categories[1].name}
         </Title>
         <SkillContent>
-          {utils.skills.map((skill, ind) => <Skill key={`skill_${ind}`}>{skill}</Skill>)}
+          {utils.skills.map((skill, ind) =>
+            <Skill key={`skill_${ind}`}>{skill}</Skill>
+          )}
         </SkillContent>
       </CategorieContent>
-      <CategorieContent id='experience'>
+      <CategorieContent id={utils.categories[2].id}>
         <Title>
-          Experience
+        {utils.categories[2].name}
         </Title>
-        <Content style={{boxShadow: 'none', borderRadius: '0px', padding: '0px', display: 'grid', gridTemplateColumns: '400px 400px', justifyContent: 'center', gridColumnGap: '20px'}}>
-          {utils.experiences.map((experience, ind) => <Content key={`experience_${ind}`} style={{background: utils.lightwhite}}><Experience data={experience}></Experience></Content>)}
+        <Content style={{boxShadow: 'none', borderRadius: '0px', padding: '0px', display: 'grid', gridTemplateColumns: `repeat(${utils.experiences.length}, 400px)`, justifyContent: 'center', gridColumnGap: '20px'}}>
+          {utils.experiences.map((experience, ind) =>
+            <Content key={`experience_${ind}`} style={{background: utils.lightwhite, gridTemplateRows: '40px repeat(auto-fill, auto)'}}>
+              <Experience data={experience} />
+            </Content>
+          )}
         </Content>
       </CategorieContent>
-      <CategorieContent>
+      <CategorieContent id={utils.categories[3].id}>
         <Title>
-          Projects
+        {utils.categories[3].name}
         </Title>
+        <Content style={{boxShadow: 'none', padding: '0px', display: 'grid', gridTemplateColumns: `repeat(auto-fill, 300px)`, gridRowGap: '20px', justifyContent: 'center', gridColumnGap: '20px'}}>
+          {utils.projectList.map((project, ind) =>
+            <Content key={`project_ind`} style={{background: utils.lightwhite, padding: '0px'}}>
+              <Project detail={project} />
+            </Content>
+          )}
+        </Content>
       </CategorieContent>
 
     </CenterPart>

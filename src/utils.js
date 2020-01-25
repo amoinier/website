@@ -19,6 +19,9 @@ module.exports.deviceScreen = {
   desktopL: `(max-width: ${size.desktop})`
 };
 
+module.exports.username = 'amoinier'
+module.exports.githubToken = '12d45f853087e766bbc31804ab98bf297d051708'
+
 module.exports.themeColor = '#F2B42B'
 module.exports.secondColor = '#2D9CDB'
 module.exports.thirdColor = '#44bd32'
@@ -35,7 +38,7 @@ module.exports.linkedin = 'https://www.linkedin.com/in/amoinier/'
 module.exports.github = 'https://github.com/amoinier'
 
 module.exports.infoText = ['Alex', 'Moinier', ' ', 'Fullstack', 'Developer', ' ', 'Based in Paris']
-module.exports.categories = [{name: 'Home', id: 'home'}, {name: 'Skills', id: 'skills'}, {name: 'Experience', id: 'experience'}, {name: 'Project', id: 'project'}]
+module.exports.categories = [{name: 'Home', id: 'home'}, {name: 'Skills', id: 'skills'}, {name: 'Experiences', id: 'experiences'}, {name: 'Projects', id: 'projects'}]
 module.exports.desc = [
   `23 years former student, interested by computing since I was young, I really started to learn programming in 2015 when I joined the 42 school. Now I spend a lot of my time developing my skills and discovering/learning new technologies to improve my level.`,
   `Worked 2 years in a startup. Small team requires to be versatile. I started as a trainee until I got to have an important place in the team. Front, back, integrations, customers, I worked on everything.`
@@ -58,6 +61,41 @@ module.exports.experiences = [
   }
 ]
 
-module.exports.projectsId = [
-  ''
+module.exports.projectList = [
+  {
+    id: '89280530',
+    language: 'React/Electron',
+    description: 'MCAssistant is here to help you to fix and clean your media center folders'
+  },
+  {
+    id: '86936065',
+    language: 'contributor',
+    contributor: true
+  },
+  {
+    id: '151246367',
+    language: 'Arduino'
+  },
+  {
+    id: '93971362',
+    description: 'Utilities to convert itunes library to Rhythmbox library'
+  },
+  {
+    id: '51005355',
+    description: ''
+  },
+  {
+    id: '56515526',
+    language: 'Only PHP, framework is forbidden',
+    description: 'School project, a webapp like Instagram to post photos and like/comment it'
+  },
+  {
+    id: '68286398',
+    language: 'Only PHP, framework is forbidden',
+    description: 'School project, a dating webapp'
+  }
+  // '56515526', //Camagru
+  // '68286398', //Matcha
+  // '93971362', //ItunesToRhythm
+  // 'hypertube',
 ]

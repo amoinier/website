@@ -14,7 +14,7 @@ const TitleText = styled.div`
 
 function Title(props) {
   return (
-    <TitleText>
+    <TitleText style={props.style}>
       {props.children}
     </TitleText>
   )
