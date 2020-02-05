@@ -10,7 +10,7 @@ import Skill from './Skill'
 import Experience from './Experience'
 import Project from './Project'
 
-import utils from '../utils'
+import config from '../config'
 
 const CenterPart = styled.div`
   display: grid;
@@ -31,7 +31,7 @@ const LeftHeader = styled.div`
   width: 600px;
   padding: 20px;
   clip-path: circle(600px at 0% 0);
-  background-color: ${utils.themeColor};
+  background-color: ${config.themeColor};
 `
 
 const RightHeader = styled.div`
@@ -71,7 +71,7 @@ const AboutMe = styled.div`
   text-align: justify;
   align-self: center;
   font-size: 1.5em;
-  color: ${utils.lightdark}
+  color: ${config.lightdark}
 `
 
 const CategorieContent = styled.div`
@@ -83,7 +83,7 @@ const CategorieContent = styled.div`
 `
 
 const Content = styled.div`
-  color: ${utils.lightdark};
+  color: ${config.lightdark};
   padding: 40px;
   border-radius: 4px;
   box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.1);
@@ -109,13 +109,13 @@ function Main() {
           <PhotoPart className='photoPart'>
             <Photo></Photo>
             <ContainerNetworkIcon>
-              <NetworkIcon href={`mailto:${utils.email}`} src='../../at.svg' alt='email' />
-              <NetworkIcon href={utils.linkedin} src='../../linkedin.svg' alt='linkedin' />
-              <NetworkIcon href={utils.github} src='../../github.svg' alt='github' />
+              <NetworkIcon href={`mailto:${config.email}`} src='../../at.svg' alt='email' />
+              <NetworkIcon href={config.linkedin} src='../../linkedin.svg' alt='linkedin' />
+              <NetworkIcon href={config.github} src='../../github.svg' alt='github' />
             </ContainerNetworkIcon>
           </PhotoPart>
           <InfoPart>
-            {utils.infoText.map((text, ind) =>
+            {config.infoText.map((text, ind) =>
               <InfoText key={`infoText_${ind}`}>
                 {text}
               </InfoText>
@@ -124,48 +124,48 @@ function Main() {
         </LeftHeader>
         <RightHeader>
           <CategoriesPart>
-            {utils.categories.map((categorie, ind) =>
+            {config.categories.map((categorie, ind) =>
               <Categorie key={`categorie_${ind}`}>
                 {categorie.name}
               </Categorie>
             )}
           </CategoriesPart>
           <AboutMe>
-            {utils.desc.map((desc, ind) =>
+            {config.desc.map((desc, ind) =>
               <p key={`aboutme_${ind}`}>{desc}</p>
             )}
           </AboutMe>
         </RightHeader>
       </Header>
-      <CategorieContent id={utils.categories[1].id}>
+      <CategorieContent id={config.categories[1].id}>
         <Title>
-          {utils.categories[1].name}
+          {config.categories[1].name}
         </Title>
         <SkillContent>
-          {utils.skills.map((skill, ind) =>
+          {config.skills.map((skill, ind) =>
             <Skill key={`skill_${ind}`}>{skill}</Skill>
           )}
         </SkillContent>
       </CategorieContent>
-      <CategorieContent id={utils.categories[2].id}>
+      <CategorieContent id={config.categories[2].id}>
         <Title>
-        {utils.categories[2].name}
+        {config.categories[2].name}
         </Title>
-        <Content style={{boxShadow: 'none', borderRadius: '0px', padding: '0px', display: 'grid', gridTemplateColumns: `repeat(${utils.experiences.length}, 400px)`, justifyContent: 'center', gridColumnGap: '20px'}}>
-          {utils.experiences.map((experience, ind) =>
-            <Content key={`experience_${ind}`} style={{background: utils.lightwhite, gridTemplateRows: '40px repeat(auto-fill, auto)'}}>
+        <Content style={{boxShadow: 'none', borderRadius: '0px', padding: '0px', display: 'grid', gridTemplateColumns: `repeat(${config.experiences.length}, 400px)`, justifyContent: 'center', gridColumnGap: '20px'}}>
+          {config.experiences.map((experience, ind) =>
+            <Content key={`experience_${ind}`} style={{background: config.lightwhite, gridTemplateRows: '40px repeat(auto-fill, auto)'}}>
               <Experience data={experience} />
             </Content>
           )}
         </Content>
       </CategorieContent>
-      <CategorieContent id={utils.categories[3].id}>
+      <CategorieContent id={config.categories[3].id}>
         <Title>
-        {utils.categories[3].name}
+        {config.categories[3].name}
         </Title>
         <Content style={{boxShadow: 'none', padding: '0px', display: 'grid', gridTemplateColumns: `repeat(auto-fill, 300px)`, gridRowGap: '20px', justifyContent: 'center', gridColumnGap: '20px'}}>
-          {utils.projectList.map((project, ind) =>
-            <Content key={`project_ind`} style={{background: utils.lightwhite, padding: '0px'}}>
+          {config.projectList.map((project, ind) =>
+            <Content key={`project_${ind}`} style={{background: config.lightwhite, padding: '0px'}}>
               <Project detail={project} />
             </Content>
           )}

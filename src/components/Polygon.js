@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components'
 
-import utils from '../utils'
+import config from '../config'
 
 const PolygonDiv = styled.div`
-  background-color: ${utils.thirdColor};
+  background-color: ${config.thirdColor};
   position: absolute;
   width: 400px;
   height: 400px;

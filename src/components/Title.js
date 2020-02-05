@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
 
-import utils from '../utils'
+import config from '../config'
 
 const TitleText = styled.div`
   font-size: 1.5em;
   font-weight: bold;
-  color: ${utils.black};
+  color: ${config.black};
   justify-self: center;
   align-self: center;
   font-family: 'Lora', serif;

@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components'
 
-import utils from '../utils'
+import config from '../config'
 
 const Border = styled.div`
   display: grid;
 
   padding: 10px;
   border-radius: 10px;
-  background-color: ${utils.white}
+  background-color: ${config.white}
 `
 
 const Image = styled.div`

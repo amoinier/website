@@ -1,0 +1,82 @@
+{
+  "deviceScreen": {
+    "mobileS": "(max-width: 320px)",
+    "mobileM": "(max-width: 375px)",
+    "mobileL": "(max-width: 425px)",
+    "tablet": "(max-width: 768px)",
+    "laptop": "(max-width: 1024px)",
+    "laptopL": "(max-width: 1440px)",
+    "desktop": "(max-width: 2560px)",
+    "desktopL": "(max-width: 2560px)"
+  },
+  "username": "amoinier",
+  "githubToken": "12d45f853087e766bbc31804ab98bf297d051708",
+  "themeColor": "#F2B42B",
+  "secondColor": "#2D9CDB",
+  "thirdColor": "#44bd32",
+  "fourthColor": "#e84118",
+  "fifthColor": "#9c88ff",
+  "white": "#F4F4F4",
+  "lightwhite": "#FFFFFF",
+  "black": "#000000",
+  "lightdark": "#2f3640",
+  "grey": "#696969",
+  
+  "email": "amoinier@outlook.fr",
+  "linkedin": "https://www.linkedin.com/in/amoinier/",
+  "github": "https://github.com/amoinier",
+  
+  "infoText": ["Alex", "Moinier", " ", "Fullstack", "Developer", " ", "Based in Paris"],
+  "categories": [{"name": "Home", "id": "home"}, {"name": "Skills", "id": "skills"}, {"name": "Experiences", "id": "experiences"}, {"name": "Projects", "id": "projects"}],
+  "desc": ["23 years former student, interested by computing since I was young, I really started to learn programming in 2015 when I joined the 42 school. Now I spend a lot of my time developing my skills and discovering/learning new technologies to improve my level.", "Worked 2 years in a startup. Small team requires to be versatile. I started as a trainee until I got to have an important place in the team. Front, back, integrations, customers, I worked on everything."
+  ],
+  "skills": ["Node.JS", "Golang", "HTML", "CSS", "React", "React Native", "Flutter", "SQL", "MongoDB", "PostgreSQL", "GraphQL", "ObjectionJS", "Docker", "Express", "Travis", "Git", "Linux"],
+  "experiences": [
+    {
+      "title": "42 School",
+      "date": "2015 - 2018",
+      "desc": "Preparing for the certification as a Digital Technologies Architect",
+      "href": "https://www.42.fr/"
+    },
+    {
+      "title": "Optionizr",
+      "date": "2016 - 2019",
+      "desc": "Fullstack developer with Node.JS/MongoDB",
+      "href": "https://www.optionizr.com/"
+    }
+  ],
+  "projectList": [
+    {
+      "id": "89280530",
+      "language": "React/Electron",
+      "description": "MCAssistant is here to help you to fix and clean your media center folders"
+    },
+    {
+      "id": "86936065",
+      "language": "contributor",
+      "contributor": true
+    },
+    {
+      "id": "151246367",
+      "language": "Arduino"
+    },
+    {
+      "id": "93971362",
+      "description": "Utilities to convert itunes library to Rhythmbox library"
+    },
+    {
+      "id": "51005355",
+      "description": ""
+    },
+    {
+      "id": "56515526",
+      "language": "Only PHP, framework is forbidden",
+      "description": "School project, a webapp like Instagram to post photos and like/comment it"
+    },
+    {
+      "id": "68286398",
+      "language": "Only PHP, framework is forbidden",
+      "description": "School project, a dating webapp"
+    }
+  ]
+}

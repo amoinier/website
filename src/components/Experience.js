@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
-import utils from '../utils'
+import config from '../config'
 
 import Title from './Title'
 
@@ -12,8 +12,8 @@ const LinkView = styled.a`
 
   text-decoration: none;
   text-align: right;
-  color: ${utils.black};
-  background-color: ${utils.lightwhite};
+  color: ${config.black};
+  background-color: ${config.lightwhite};
 `
 
 function Experience(props) {

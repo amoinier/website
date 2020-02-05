@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
 
-import utils from '../utils'
+import config from '../config'
 
 const TextSpan = styled.div`
 font-size: 1.5em;
 font-weight: bold;
-color: ${utils.white};
+color: ${config.white};
 `
 
 function InfoText(props) {

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components'
 
-import utils from '../utils'
+import config from '../config'
 
 const BorderIcon = styled.a`
-  background-color: ${utils.white};
+  background-color: ${config.white};
   border-radius: 10px;
   cursor: pointer;
 

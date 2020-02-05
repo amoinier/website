@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import axios from 'axios'
 import Emoji from "react-emoji-render";
 
-import utils from '../utils'
+import config from '../config'
 
 import Title from './Title'
 import { useEffect } from 'react';
@@ -14,7 +14,7 @@ grid-template-rows: auto 20px auto 50px;
 grid-row-gap: 10px;
 
 text-decoration: none;
-color: ${utils.lightdark};
+color: ${config.lightdark};
 cursor: pointer;
 padding: 40px;
 `
@@ -38,20 +38,18 @@ function Project(props) {
       const [res, contributors] = await Promise.all([
         axios.get(`https://api.github.com/repositories/${props.detail.id}`, {
           auth: {
-            username: utils.username,
-            password: utils.githubToken
+            username: config.username,
+            password: config.githubToken
           }
         }),
         axios.get(`https://api.github.com/repositories/${props.detail.id}/contributors`, {
           auth: {
-            username: utils.username,
-            password: utils.githubToken
+            username: config.username,
+            password: config.githubToken
           }
         })])
         .catch((err) => {
-        console.log('test');
         console.log(err);
-        console.log('test');
       })
 
       res.data.commits = contributors.data.reduce((total, contributor) => total + contributor.contributions, 0)
@@ -64,8 +62,6 @@ function Project(props) {
     
   }, [props.detail.id])
   
-  console.log(project);
-
   return (
     <Fragment>
       { project && project.name ?
@@ -84,17 +80,17 @@ function Project(props) {
         </p>
         <Details>
           <Info>
-            <span style={{color: utils.lightdark, fontWeight: 'bold', fontSize: '1.25em'}}>{project.commits}</span>
+            <span style={{color: config.lightdark, fontWeight: 'bold', fontSize: '1.25em'}}>{project.commits}</span>
             <span>Commits</span>
           </Info>
 
           <Info>
-            <span style={{color: utils.lightdark, fontWeight: 'bold', fontSize: '1.25em'}}>{project.stargazers_count}</span>
+            <span style={{color: config.lightdark, fontWeight: 'bold', fontSize: '1.25em'}}>{project.stargazers_count}</span>
             <span>Stars</span>
           </Info>
 
           <Info>
-            <span style={{color: utils.lightdark, fontWeight: 'bold', fontSize: '1.25em'}}>{project.forks_count}</span>
+            <span style={{color: config.lightdark, fontWeight: 'bold', fontSize: '1.25em'}}>{project.forks_count}</span>
             <span>Forks</span>
           </Info>
         </Details>

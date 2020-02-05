@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
 
-import utils from '../utils'
+import config from '../config'
 
 const CategorieText = styled.a`
   font-size: 1.5em;
   font-weight: bold;
-  color: ${utils.black};
+  color: ${config.black};
   cursor: pointer;
   font-family: 'Lora', serif;
 `
