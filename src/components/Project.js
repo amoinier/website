@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 
 const ProjectLink = styled.a`
 display: grid;
-grid-template-rows: auto 20px auto 50px;
+grid-template-rows: 40px 20px auto 50px;
 grid-row-gap: 10px;
 
 text-decoration: none;
@@ -69,14 +69,14 @@ function Project(props) {
         <Title style={{justifySelf: 'start', fontSize: '1.25em'}}>{props.detail.contributor ? project.full_name : project.name.charAt(0).toUpperCase() + project.name.slice(1)}</Title>
         <div>{project.language} {props.detail.language ? `(${props.detail.language})` : ''}</div>
         <p>
-          <span><Emoji text={project.description || ''} /></span>
-          { props.detail.description ?
+          { project.description ?
           <Fragment>
+          <span><Emoji text={project.description || ''} /></span>
             <br/>
             <br/>
-            <span>{props.detail.description}</span>
           </Fragment>
           : '' }
+          <span>{props.detail.description}</span>
         </p>
         <Details>
           <Info>

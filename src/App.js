@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from 'react'
+import axios from 'axios'
 import styled from 'styled-components'
 
 import config from './config.json'
@@ -20,7 +21,14 @@ const RightPart = styled.div`
   }
 `
 
+const getConfig = async () => {
+  const result = await axios.get('https://raw.githubusercontent.com/amoinier/website/master/src/config.json').catch(e => console.log(e))
+
+  console.log(result)
+}
+
 function App() {
+  getConfig()
   return (
     <Fragment>
       <Polygon size='600px' top='500px' left='1500px' radius='20px' degree='45deg'></Polygon>
