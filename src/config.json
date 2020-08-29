@@ -26,7 +26,15 @@
   "linkedin": "https://www.linkedin.com/in/amoinier/",
   "github": "https://github.com/amoinier",
 
-  "infoText": ["Alex", "Moinier", " ", "Fullstack", "Developer", " ", "Based in Paris"],
+  "infoText": [{
+      "text": "Alex",
+      "analytics": "umami--copy--name"
+    }, {
+      "text": "Moinier",
+      "analytics": "umami--copy--surname"
+    },
+    " ", "Fullstack", "Developer", " ", "Based in Paris"
+  ],
   "categories": [{
     "name": "Home",
     "id": "home"
@@ -46,64 +54,78 @@
       "title": "42 School",
       "date": "2015 - 2018",
       "desc": "Preparing for the certification as a Digital Technologies Architect",
-      "href": "https://www.42.fr/"
+      "href": "https://www.42.fr/",
+      "analytics": "umami--click--42school umami--auxclick--42school"
     },
     {
       "title": "Optionizr",
       "date": "November 2016 -  March 2019",
       "desc": "Fullstack developer with Node.JS/MongoDB",
-      "href": "https://www.optionizr.com/"
+      "href": "https://www.optionizr.com/",
+      "analytics": "umami--click--optionizr umami--auxclick--optionizr"
+
     },
     {
       "title": "GetCasa",
       "date": "May 2019 - December 2019",
       "desc": "Side-project: Casa connect together all your accessories on a single application.",
-      "href": "https://github.com/getcasa"
+      "href": "https://github.com/getcasa",
+      "analytics": "umami--click--getcasa umami--auxclick--getcasa"
     }
   ],
   "projectList": [{
       "id": "89280530",
       "language": "React/Electron",
-      "description": "MCAssistant is here to help you to fix and clean your media center folders"
+      "description": "MCAssistant is here to help you to fix and clean your media center folders",
+      "analytics": "umami--click--git_mcassistant umami--auxclick--git_mcassistant"
+
     },
     {
       "id": "86936065",
       "language": "contributor",
-      "contributor": true
+      "contributor": true,
+      "analytics": "umami--click--git_storedata umami--auxclick--git_storedata"
     },
     {
       "id": "151246367",
-      "language": "Arduino"
+      "language": "Arduino",
+      "analytics": "umami--click--git_nodemcuring umami--auxclick--git_nodemcuring"
     },
     {
       "id": "93971362",
-      "description": "Utilities to convert itunes library to Rhythmbox library"
+      "description": "Utilities to convert itunes library to Rhythmbox library",
+      "analytics": "umami--click--git_itunestorhythm umami--auxclick--git_itunestorhythm"
     },
     {
       "id": "51005355",
-      "description": ""
+      "description": "",
+      "analytics": "umami--click--git_breadman umami--auxclick--git_breadman"
     },
     {
       "id": "56515526",
       "language": "Only PHP, framework is forbidden",
-      "description": "School project, a webapp like Instagram to post photos and like/comment it"
+      "description": "School project, a webapp like Instagram to post photos and like/comment it",
+      "analytics": "umami--click--git_camagru umami--auxclick--git_camagru"
     },
     {
       "id": "68286398",
       "language": "Only PHP, framework is forbidden",
-      "description": "School project, a dating webapp"
+      "description": "School project, a dating webapp",
+      "analytics": "umami--click--matcha umami--auxclick--matcha"
     },
     {
       "id": "189185767"
     },
     {
       "id": "163184860",
-      "description": "Gateway to control device for Casa project"
+      "description": "Gateway to control device for Casa project",
+      "analytics": "umami--click--git_casa umami--auxclick--git_casa"
     },
     {
       "id": "205830003",
       "language": "Flutter",
-      "description": "Mobile client app for Casa project"
+      "description": "Mobile client app for Casa project",
+      "analytics": "umami--click--git_casagateway umami--auxclick--git_casagateway"
     }
   ]
 }

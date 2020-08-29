@@ -36,6 +36,7 @@ interface ProjectProps {
     language?: string;
     description?: string;
     contributor?: boolean;
+    analytics?: string;
   };
 }
 
@@ -93,7 +94,7 @@ const Project = (props: ProjectProps) => {
   return (
     <Fragment>
       {project && project.name ? (
-        <ProjectLink href={project.html_url}>
+        <ProjectLink className={props.detail.analytics} href={project.html_url}>
           <Title style={{ justifySelf: "start", fontSize: "1.25em" }}>
             {props.detail.contributor
               ? project.full_name

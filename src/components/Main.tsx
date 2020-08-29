@@ -106,19 +106,22 @@ function Main() {
       <Header className="header">
         <LeftHeader className="leftHeader">
           <PhotoPart className="photoPart">
-            <Photo></Photo>
+            <Photo />
             <ContainerNetworkIcon>
               <NetworkIcon
+                className="umami--click--email umami--auxclick--email"
                 href={`mailto:${config.email}`}
                 src="../../at.svg"
                 alt="email"
               />
               <NetworkIcon
+                className="umami--click--linkedin umami--auxclick--linkedin"
                 href={config.linkedin}
                 src="../../linkedin.svg"
                 alt="linkedin"
               />
               <NetworkIcon
+                className="umami--click--github umami--auxclick--github"
                 href={config.github}
                 src="../../github.svg"
                 alt="github"
@@ -126,9 +129,16 @@ function Main() {
             </ContainerNetworkIcon>
           </PhotoPart>
           <InfoPart>
-            {config.infoText.map((text, ind) => (
-              <InfoText key={`infoText_${ind}`}>{text}</InfoText>
-            ))}
+            {config.infoText.map((info, ind: number) => {
+              const text = typeof info === "string" ? info : info.text;
+              const className = typeof info === "string" ? "" : info.analytics;
+
+              return (
+                <InfoText className={className} key={`infoText_${ind}`}>
+                  {text}
+                </InfoText>
+              );
+            })}
           </InfoPart>
         </LeftHeader>
         <RightHeader>
@@ -191,7 +201,7 @@ function Main() {
             gridColumnGap: "20px",
           }}
         >
-          {config.projectList.map((project, ind) => (
+          {config.projectList.map((project, ind: number) => (
             <Content
               key={`project_${ind}`}
               style={{ background: config.lightwhite, padding: "0px" }}

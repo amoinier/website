@@ -14,6 +14,7 @@ const BorderIcon = styled.a`
 `;
 
 interface NetworkIconProps {
+  className?: string;
   href: string;
   src: string;
   alt: string;
@@ -21,7 +22,7 @@ interface NetworkIconProps {
 
 const NetworkIcon = (props: NetworkIconProps) => {
   return (
-    <BorderIcon href={props.href}>
+    <BorderIcon className={props.className} href={props.href}>
       <img style={{ width: "30px" }} src={props.src} alt={props.alt}></img>
     </BorderIcon>
   );

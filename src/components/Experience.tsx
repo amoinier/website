@@ -21,6 +21,7 @@ interface ExperienceProps {
     date: string;
     desc: string;
     href: string;
+    analytics?: string;
   };
 }
 
@@ -30,7 +31,9 @@ const Experience = (props: ExperienceProps) => {
       <Title style={{ fontSize: "1.25em" }}>{props.data.title}</Title>
       <span>{props.data.date}</span>
       <p>{props.data.desc}</p>
-      <LinkView href={props.data.href}>View More...</LinkView>
+      <LinkView className={props.data.analytics} href={props.data.href}>
+        View More...
+      </LinkView>
     </React.Fragment>
   );
 };

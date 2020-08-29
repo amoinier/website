@@ -10,11 +10,12 @@ const TextSpan = styled.div`
 `;
 
 interface InfoTextProps {
+  className?: string;
   children: string;
 }
 
 const InfoText = (props: InfoTextProps) => {
-  return <TextSpan>{props.children}</TextSpan>;
+  return <TextSpan className={props.className}>{props.children}</TextSpan>;
 };
 
 export default InfoText;
