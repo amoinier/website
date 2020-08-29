@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import styled from "styled-components";
 
 import config from "./config.json";
@@ -21,18 +20,7 @@ const RightPart = styled.div`
   }
 `;
 
-const getConfig = async (): Promise<void> => {
-  const result = await axios
-    .get(
-      "https://raw.githubusercontent.com/amoinier/website/master/src/config.json"
-    )
-    .catch((e) => console.log(e));
-
-  console.log(result);
-};
-
 const App = () => {
-  getConfig();
   return (
     <>
       <Polygon
