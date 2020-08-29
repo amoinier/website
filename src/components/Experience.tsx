@@ -27,14 +27,14 @@ interface ExperienceProps {
 
 const Experience = (props: ExperienceProps) => {
   return (
-    <React.Fragment>
+    <>
       <Title style={{ fontSize: "1.25em" }}>{props.data.title}</Title>
       <span>{props.data.date}</span>
       <p>{props.data.desc}</p>
       <LinkView className={props.data.analytics} href={props.data.href}>
         View More...
       </LinkView>
-    </React.Fragment>
+    </>
   );
 };
 

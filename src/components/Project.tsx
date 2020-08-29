@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import Emoji from "react-emoji-render";
@@ -92,7 +92,7 @@ const Project = (props: ProjectProps) => {
   }, [props.detail.id]);
 
   return (
-    <Fragment>
+    <>
       {project && project.name ? (
         <ProjectLink className={props.detail.analytics} href={project.html_url}>
           <Title style={{ justifySelf: "start", fontSize: "1.25em" }}>
@@ -106,13 +106,13 @@ const Project = (props: ProjectProps) => {
           </div>
           <p>
             {project.description ? (
-              <Fragment>
+              <>
                 <span>
                   <Emoji text={project.description || ""} />
                 </span>
                 <br />
                 <br />
-              </Fragment>
+              </>
             ) : (
               ""
             )}
@@ -162,7 +162,7 @@ const Project = (props: ProjectProps) => {
       ) : (
         ""
       )}
-    </Fragment>
+    </>
   );
 };
 

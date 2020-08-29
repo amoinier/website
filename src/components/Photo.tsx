@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import config from "../config.json";
@@ -21,11 +21,11 @@ const Image = styled.div`
 
 function Photo() {
   return (
-    <Fragment>
+    <>
       <Border>
         <Image></Image>
       </Border>
-    </Fragment>
+    </>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -21,7 +21,7 @@ const RightPart = styled.div`
   }
 `;
 
-const getConfig = async () => {
+const getConfig = async (): Promise<void> => {
   const result = await axios
     .get(
       "https://raw.githubusercontent.com/amoinier/website/master/src/config.json"
@@ -31,10 +31,10 @@ const getConfig = async () => {
   console.log(result);
 };
 
-function App() {
+const App = () => {
   getConfig();
   return (
-    <Fragment>
+    <>
       <Polygon
         size="600px"
         top="500px"
@@ -87,8 +87,8 @@ function App() {
       </LeftPart>
       <Main />
       <RightPart></RightPart>
-    </Fragment>
+    </>
   );
-}
+};
 
 export default App;
