@@ -93,7 +93,7 @@ const Content = styled.div`
 
 const SkillContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 10%);
+  grid-template-columns: repeat(auto-fill, 15%);
   align-content: flex-start;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
