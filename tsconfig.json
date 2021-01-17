@@ -8,7 +8,7 @@
       "dom",
       "dom.iterable"
     ],
-    "jsx": "react",
+    "jsx": "react-jsx",
     "declaration": true,
     "sourceMap": true,
     "outDir": "./dist",
@@ -33,7 +33,8 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src/**/*"

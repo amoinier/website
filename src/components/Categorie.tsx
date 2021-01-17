@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 import config from "../config.json";
@@ -16,11 +15,7 @@ interface CategorieProps {
 }
 
 const Categorie = (props: CategorieProps) => {
-  return (
-    <CategorieText href={`#${props.children.toLowerCase()}`}>
-      {props.children}
-    </CategorieText>
-  );
+  return <CategorieText href={`#${props.children.toLowerCase()}`}>{props.children}</CategorieText>;
 };
 
 export default Categorie;

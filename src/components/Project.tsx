@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import Emoji from "react-emoji-render";
@@ -63,15 +63,12 @@ const Project = (props: ProjectProps) => {
             password: config.githubToken,
           },
         }),
-        axios.get(
-          `https://api.github.com/repositories/${props.detail.id}/contributors`,
-          {
-            auth: {
-              username: config.username,
-              password: config.githubToken,
-            },
-          }
-        ),
+        axios.get(`https://api.github.com/repositories/${props.detail.id}/contributors`, {
+          auth: {
+            username: config.username,
+            password: config.githubToken,
+          },
+        }),
       ]).catch((err) => {
         console.log(err);
       });
@@ -101,8 +98,7 @@ const Project = (props: ProjectProps) => {
               : project.name.charAt(0).toUpperCase() + project.name.slice(1)}
           </Title>
           <div>
-            {project.language}{" "}
-            {props.detail.language ? `(${props.detail.language})` : ""}
+            {project.language} {props.detail.language ? `(${props.detail.language})` : ""}
           </div>
           <p>
             {project.description ? (

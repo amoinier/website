@@ -45,12 +45,7 @@ module.exports = {
   },
   rules: {
     "no-underscore-dangle": 0,
-    "no-restricted-syntax": [
-      0,
-      "ForInStatement",
-      "LabeledStatement",
-      "WithStatement",
-    ],
+    "no-restricted-syntax": [0, "ForInStatement", "LabeledStatement", "WithStatement"],
     "no-continue": 0,
     "prefer-promise-reject-errors": 0,
     "no-nested-ternary": 0,
@@ -116,6 +111,7 @@ module.exports = {
     "jsx-a11y/no-redundant-roles": 0,
     "jsx-a11y/anchor-is-valid": 0,
     "react/forbid-prop-types": 0,
+    "react/react-in-jsx-scope": 0,
     "react/jsx-filename-extension": [
       2,
       {

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 import config from "./config.json";
@@ -23,13 +22,7 @@ const RightPart = styled.div`
 const App = () => {
   return (
     <>
-      <Polygon
-        size="600px"
-        top="500px"
-        left="1500px"
-        radius="20px"
-        degree="45deg"
-      ></Polygon>
+      <Polygon size="600px" top="500px" left="1500px" radius="20px" degree="45deg"></Polygon>
       <Polygon
         size="300px"
         top="600px"
