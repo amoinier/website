@@ -10,13 +10,13 @@ import { useEffect } from "react";
 
 const ProjectLink = styled.a`
   display: grid;
-  grid-template-rows: 40px 20px auto 50px;
-  grid-row-gap: 10px;
+  grid-template-rows: 42px 16px auto 50px;
+  grid-row-gap: 8px;
 
   text-decoration: none;
   color: ${config.lightdark};
   cursor: pointer;
-  padding: 40px;
+  padding: 42px;
 `;
 
 const Details = styled.div`
@@ -27,7 +27,7 @@ const Details = styled.div`
 const Info = styled.div`
   display: grid;
   grid-template-rows: auto auto;
-  grid-row-gap: 5px;
+  grid-row-gap: 8px;
 `;
 
 interface ProjectProps {

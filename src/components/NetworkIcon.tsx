@@ -3,13 +3,19 @@ import styled from "styled-components";
 import config from "../config.json";
 
 const BorderIcon = styled.a`
+  height: max-content;
   background-color: ${config.white};
   border-radius: 5px;
   cursor: pointer;
+  padding: 16px;
 
   display: grid;
   justify-content: center;
   align-content: center;
+
+  @media screen and ${config.deviceScreen.laptop} {
+    padding: 8px;
+  }
 `;
 
 interface NetworkIconProps {

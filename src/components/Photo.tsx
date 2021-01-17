@@ -5,7 +5,7 @@ import config from "../config.json";
 const Border = styled.div`
   display: grid;
 
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   background-color: ${config.white};
 `;

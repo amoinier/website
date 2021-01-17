@@ -13,31 +13,43 @@ import config from "../config.json";
 
 const CenterPart = styled.div`
   display: grid;
-  grid-template-rows: 600px repeat(3, auto);
   grid-row-gap: 10vh;
+
+  @media screen and ${config.deviceScreen.laptop} {
+    grid-template-rows: repeat(4, auto);
+  }
 `;
 
 const Header = styled.header`
   display: grid;
   grid-template-columns: 600px auto;
+
+  @media screen and ${config.deviceScreen.laptop} {
+    grid-template-columns: initial;
+    grid-template-rows: auto auto;
+  }
 `;
 
 const LeftHeader = styled.div`
   display: grid;
   grid-template-columns: 40% 60%;
-  grid-column-gap: 20px;
+  grid-column-gap: 16px;
 
-  width: 600px;
-  padding: 20px;
+  max-width: 600px;
+  padding: 16px;
   clip-path: circle(600px at 0% 0);
   background-color: ${config.themeColor};
+
+  @media screen and ${config.deviceScreen.laptop} {
+    grid-template-columns: 50% 50%;
+  }
 `;
 
 const RightHeader = styled.div`
   display: grid;
   grid-template-rows: 50px auto;
 
-  padding: 20px;
+  padding: 16px;
 `;
 
 const PhotoPart = styled.div`
@@ -45,28 +57,40 @@ const PhotoPart = styled.div`
 
   display: grid;
   grid-template-rows: 420px 100px;
+
+  @media screen and ${config.deviceScreen.laptop} {
+    grid-template-rows: 450px auto;
+  }
 `;
 
 const ContainerNetworkIcon = styled.div`
-  padding: 20px 0px;
+  padding: 16px 0px;
 
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-column-gap: 20px;
+  justify-content: space-between;
+
+  @media screen and ${config.deviceScreen.laptop} {
+    grid-template-columns: repeat(3, max-content);
+  }
 `;
 
 const InfoPart = styled.div`
-  padding: 20px 0px;
+  padding: 16px 0px;
 `;
 
 const CategoriesPart = styled.div`
   display: grid;
   grid-auto-flow: column;
   justify-items: end;
+
+  @media screen and ${config.deviceScreen.laptop} {
+    justify-items: center;
+  }
 `;
 
 const AboutMe = styled.div`
-  padding: 20px;
+  padding: 16px;
   text-align: justify;
   align-self: center;
   font-size: 1.5em;
@@ -74,29 +98,58 @@ const AboutMe = styled.div`
 `;
 
 const CategorieContent = styled.div`
-  padding: 20px;
+  padding: 16px;
 
   display: grid;
   grid-template-rows: auto auto;
-  grid-row-gap: 20px;
+  grid-row-gap: 16px;
 `;
 
 const Content = styled.div`
   color: ${config.lightdark};
-  padding: 40px;
+  padding: 42px;
   border-radius: 5px;
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
 
   display: grid;
+
+  @media screen and ${config.deviceScreen.laptop} {
+    grid-row-gap: 16px;
+  }
+`;
+
+const ExperienceContainer = styled.div`
+  color: ${config.lightdark};
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+
+  display: grid;
+
+  box-shadow: none;
+  border-radius: 0px;
+  padding: 0px;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+
+  @media screen and ${config.deviceScreen.laptop} {
+    grid-template-columns: initial;
+    grid-row-gap: 16px;
+  }
 `;
 
 const SkillContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, 15%);
+  grid-template-columns: repeat(auto-fill, 10%);
   align-content: flex-start;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
   justify-content: center;
+
+  @media screen and ${config.deviceScreen.laptop} {
+    grid-template-columns: repeat(auto-fill, 30%);
+  }
 `;
 
 function Main() {
@@ -163,17 +216,7 @@ function Main() {
       </CategorieContent>
       <CategorieContent id={config.categories[2].id}>
         <Title>{config.categories[2].name}</Title>
-        <Content
-          style={{
-            boxShadow: "none",
-            borderRadius: "0px",
-            padding: "0px",
-            display: "grid",
-            gridTemplateColumns: `repeat(${config.experiences.length}, auto)`,
-            justifyContent: "center",
-            gridColumnGap: "20px",
-          }}
-        >
+        <ExperienceContainer>
           {config.experiences.map((experience, ind) => (
             <Content
               key={`experience_${ind}`}
@@ -185,21 +228,11 @@ function Main() {
               <Experience data={experience} />
             </Content>
           ))}
-        </Content>
+        </ExperienceContainer>
       </CategorieContent>
       <CategorieContent id={config.categories[3].id}>
         <Title>{config.categories[3].name}</Title>
-        <Content
-          style={{
-            boxShadow: "none",
-            padding: "0px",
-            display: "grid",
-            gridTemplateColumns: `repeat(auto-fit, 300px)`,
-            gridRowGap: "20px",
-            justifyContent: "center",
-            gridColumnGap: "20px",
-          }}
-        >
+        <ExperienceContainer>
           {config.projectList.map((project, ind: number) => (
             <Content
               key={`project_${ind}`}
@@ -208,7 +241,7 @@ function Main() {
               <Project detail={project} />
             </Content>
           ))}
-        </Content>
+        </ExperienceContainer>
       </CategorieContent>
     </CenterPart>
   );

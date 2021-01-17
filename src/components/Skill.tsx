@@ -10,7 +10,7 @@ const SkillText = styled.div`
   color: ${config.lightdark};
   background-color: ${config.lightwhite};
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 8px;
   width: calc(100% - 20px);
   text-align: center;
   border-radius: 5px;

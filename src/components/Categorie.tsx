@@ -8,6 +8,10 @@ const CategorieText = styled.a`
   color: ${config.black};
   cursor: pointer;
   font-family: "Helvetica", serif;
+
+  @media screen and ${config.deviceScreen.laptop} {
+    font-size: 1em;
+  }
 `;
 
 interface CategorieProps {

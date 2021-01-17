@@ -26,6 +26,6 @@ body {
 
 @media screen and (max-width: 1440px) {
   #root {
-    grid-template-columns: initial;
+    grid-template-columns: auto;
   }
 }
