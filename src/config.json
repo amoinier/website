@@ -10,7 +10,7 @@
     "desktopL": "(max-width: 2560px)"
   },
   "username": "amoinier",
-  "githubToken": "12d45f853087e766bbc31804ab98bf297d051708",
+  "githubToken": "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",
   "themeColor": "#F2B42B",
   "secondColor": "#2D9CDB",
   "thirdColor": "#44bd32",
@@ -22,35 +22,70 @@
   "lightdark": "#2f3640",
   "grey": "#696969",
 
-  "email": "amoinier@outlook.fr",
+  "email": "pro@amoinier.fr",
   "linkedin": "https://www.linkedin.com/in/amoinier/",
   "github": "https://github.com/amoinier",
 
-  "infoText": [{
+  "infoText": [
+    {
       "text": "Alex",
       "analytics": "umami--copy--name"
-    }, {
+    },
+    {
       "text": "Moinier",
       "analytics": "umami--copy--surname"
     },
-    " ", "Fullstack", "Developer", " ", "Based in Paris"
+    " ",
+    "Fullstack",
+    "Developer",
+    " ",
+    "Based in Paris"
   ],
-  "categories": [{
-    "name": "Home",
-    "id": "home"
-  }, {
-    "name": "Skills",
-    "id": "skills"
-  }, {
-    "name": "Experiences",
-    "id": "experiences"
-  }, {
-    "name": "Projects",
-    "id": "projects"
-  }],
-  "desc": ["23 years former student, interested by computing since I was young, I really started to learn programming in 2015 when I joined the 42 school. Now I spend a lot of my time developing my skills and discovering/learning new technologies to improve my level.", "Worked 2 years in a startup. Small team requires to be versatile. I started as a trainee until I got to have an important place in the team. Front, back, integrations, customers, I worked on everything."],
-  "skills": ["Node.JS", "Golang", "HTML", "CSS", "React", "React Native", "Flutter", "MongoDB", "Mongoose", "SQL", "MySQL", "PostgreSQL", "GraphQL", "ObjectionJS", "Docker", "Express", "Travis", "Git", "Linux"],
-  "experiences": [{
+  "categories": [
+    {
+      "name": "Home",
+      "id": "home"
+    },
+    {
+      "name": "Skills",
+      "id": "skills"
+    },
+    {
+      "name": "Experiences",
+      "id": "experiences"
+    },
+    {
+      "name": "Projects",
+      "id": "projects"
+    }
+  ],
+  "desc": [
+    "25 years former student, interested by computing since I was young, I really started to learn programming in 2015 when I joined the 42 school. Now I spend a lot of my time developing my skills and discovering/learning new technologies to improve my level.",
+    "Worked 2 years in a startup. Small team requires to be versatile. I started as a trainee until I got to have an important place in the team. Front, back, integrations, customers, I worked on everything."
+  ],
+  "skills": [
+    "Node.JS",
+    "Golang",
+    "HTML",
+    "CSS",
+    "React",
+    "React Native",
+    "Flutter",
+    "MongoDB",
+    "Mongoose",
+    "SQL",
+    "MySQL",
+    "PostgreSQL",
+    "GraphQL",
+    "ObjectionJS",
+    "Docker",
+    "Express",
+    "Travis",
+    "Git",
+    "Linux"
+  ],
+  "experiences": [
+    {
       "title": "42 School",
       "date": "2015 - 2018",
       "desc": "Preparing for the certification as a Digital Technologies Architect",
@@ -63,7 +98,6 @@
       "desc": "Fullstack developer with Node.JS/MongoDB",
       "href": "https://www.optionizr.com/",
       "analytics": "umami--click--optionizr umami--auxclick--optionizr"
-
     },
     {
       "title": "GetCasa",
@@ -73,12 +107,12 @@
       "analytics": "umami--click--getcasa umami--auxclick--getcasa"
     }
   ],
-  "projectList": [{
+  "projectList": [
+    {
       "id": "89280530",
       "language": "React/Electron",
       "description": "MCAssistant is here to help you to fix and clean your media center folders",
       "analytics": "umami--click--git_mcassistant umami--auxclick--git_mcassistant"
-
     },
     {
       "id": "86936065",
