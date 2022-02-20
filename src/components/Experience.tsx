@@ -24,7 +24,7 @@ interface ExperienceProps {
   };
 }
 
-const Experience = (props: ExperienceProps) => {
+function Experience(props: ExperienceProps) {
   return (
     <>
       <Title style={{ fontSize: "1.25em" }}>{props.data.title}</Title>
@@ -35,6 +35,6 @@ const Experience = (props: ExperienceProps) => {
       </LinkView>
     </>
   );
-};
+}
 
 export default Experience;

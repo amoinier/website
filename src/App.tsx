@@ -19,7 +19,7 @@ const RightPart = styled.div`
   }
 `;
 
-const App = () => {
+function App() {
   return (
     <>
       <Polygon size="600px" top="500px" left="1500px" radius="20px" degree="45deg"></Polygon>
@@ -70,6 +70,6 @@ const App = () => {
       <RightPart></RightPart>
     </>
   );
-};
+}
 
 export default App;

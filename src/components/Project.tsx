@@ -51,7 +51,7 @@ interface GithubProjectProps {
   forks_count: string;
 }
 
-const Project = (props: ProjectProps) => {
+function Project(props: ProjectProps) {
   const [project, setProject] = useState<GithubProjectProps | null>(null);
 
   useEffect(() => {
@@ -88,78 +88,76 @@ const Project = (props: ProjectProps) => {
     });
   }, [props.detail.id]);
 
+  if (!project?.name) {
+    return null;
+  }
+
   return (
-    <>
-      {project && project.name ? (
-        <ProjectLink className={props.detail.analytics} href={project.html_url}>
-          <Title style={{ justifySelf: "start", fontSize: "1.25em" }}>
-            {props.detail.contributor
-              ? project.full_name
-              : project.name.charAt(0).toUpperCase() + project.name.slice(1)}
-          </Title>
-          <div>
-            {project.language} {props.detail.language ? `(${props.detail.language})` : ""}
-          </div>
-          <p>
-            {project.description ? (
-              <>
-                <span>
-                  <Emoji text={project.description || ""} />
-                </span>
-                <br />
-                <br />
-              </>
-            ) : (
-              ""
-            )}
-            <span>{props.detail.description}</span>
-          </p>
-          <Details>
-            <Info>
-              <span
-                style={{
-                  color: config.lightdark,
-                  fontWeight: "bold",
-                  fontSize: "1.25em",
-                }}
-              >
-                {project.commits}
-              </span>
-              <span>Commits</span>
-            </Info>
+    <ProjectLink className={props.detail.analytics} href={project.html_url}>
+      <Title style={{ justifySelf: "start", fontSize: "1.25em" }}>
+        {props.detail.contributor
+          ? project.full_name
+          : project.name.charAt(0).toUpperCase() + project.name.slice(1)}
+      </Title>
+      <div>
+        {project.language} {props.detail.language ? `(${props.detail.language})` : ""}
+      </div>
+      <p>
+        {project.description ? (
+          <>
+            <span>
+              <Emoji text={project.description || ""} />
+            </span>
+            <br />
+            <br />
+          </>
+        ) : (
+          ""
+        )}
+        <span>{props.detail.description}</span>
+      </p>
+      <Details>
+        <Info>
+          <span
+            style={{
+              color: config.lightdark,
+              fontWeight: "bold",
+              fontSize: "1.25em",
+            }}
+          >
+            {project.commits}
+          </span>
+          <span>Commits</span>
+        </Info>
 
-            <Info>
-              <span
-                style={{
-                  color: config.lightdark,
-                  fontWeight: "bold",
-                  fontSize: "1.25em",
-                }}
-              >
-                {project.stargazers_count}
-              </span>
-              <span>Stars</span>
-            </Info>
+        <Info>
+          <span
+            style={{
+              color: config.lightdark,
+              fontWeight: "bold",
+              fontSize: "1.25em",
+            }}
+          >
+            {project.stargazers_count}
+          </span>
+          <span>Stars</span>
+        </Info>
 
-            <Info>
-              <span
-                style={{
-                  color: config.lightdark,
-                  fontWeight: "bold",
-                  fontSize: "1.25em",
-                }}
-              >
-                {project.forks_count}
-              </span>
-              <span>Forks</span>
-            </Info>
-          </Details>
-        </ProjectLink>
-      ) : (
-        ""
-      )}
-    </>
+        <Info>
+          <span
+            style={{
+              color: config.lightdark,
+              fontWeight: "bold",
+              fontSize: "1.25em",
+            }}
+          >
+            {project.forks_count}
+          </span>
+          <span>Forks</span>
+        </Info>
+      </Details>
+    </ProjectLink>
   );
-};
+}
 
 export default Project;

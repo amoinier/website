@@ -20,8 +20,8 @@ interface SkillProps {
   children: string;
 }
 
-const Skill = (props: SkillProps) => {
+function Skill(props: SkillProps) {
   return <SkillText>{props.children}</SkillText>;
-};
+}
 
 export default Skill;

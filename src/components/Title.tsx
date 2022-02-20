@@ -16,8 +16,8 @@ interface TitleProps {
   children: string;
 }
 
-const Title = (props: TitleProps) => {
+function Title(props: TitleProps) {
   return <TitleText style={props.style}>{props.children}</TitleText>;
-};
+}
 
 export default Title;

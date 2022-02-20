@@ -20,11 +20,9 @@ const Image = styled.div`
 
 function Photo() {
   return (
-    <>
-      <Border>
-        <Image></Image>
-      </Border>
-    </>
+    <Border>
+      <Image></Image>
+    </Border>
   );
 }
 

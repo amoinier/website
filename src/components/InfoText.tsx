@@ -13,8 +13,8 @@ interface InfoTextProps {
   children: string;
 }
 
-const InfoText = (props: InfoTextProps) => {
+function InfoText(props: InfoTextProps) {
   return <TextSpan className={props.className}>{props.children}</TextSpan>;
-};
+}
 
 export default InfoText;

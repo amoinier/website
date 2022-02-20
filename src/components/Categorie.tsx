@@ -18,8 +18,8 @@ interface CategorieProps {
   children: string;
 }
 
-const Categorie = (props: CategorieProps) => {
+function Categorie(props: CategorieProps) {
   return <CategorieText href={`#${props.children.toLowerCase()}`}>{props.children}</CategorieText>;
-};
+}
 
 export default Categorie;

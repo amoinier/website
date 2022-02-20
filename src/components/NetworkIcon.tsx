@@ -25,12 +25,12 @@ interface NetworkIconProps {
   alt: string;
 }
 
-const NetworkIcon = (props: NetworkIconProps) => {
+function NetworkIcon(props: NetworkIconProps) {
   return (
     <BorderIcon className={props.className} href={props.href}>
       <img style={{ width: "30px" }} src={props.src} alt={props.alt}></img>
     </BorderIcon>
   );
-};
+}
 
 export default NetworkIcon;

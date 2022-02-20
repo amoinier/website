@@ -27,7 +27,7 @@ interface PolygonProps {
   href?: string;
 }
 
-const Polygon = (props: PolygonProps) => {
+function Polygon(props: PolygonProps) {
   return (
     <PolygonDiv
       style={{
@@ -45,6 +45,6 @@ const Polygon = (props: PolygonProps) => {
       href={props.href}
     ></PolygonDiv>
   );
-};
+}
 
 export default Polygon;
