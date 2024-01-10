@@ -1,5 +1,5 @@
 # Build from other image
-FROM node:14-alpine as BUILDER
+FROM node:20-alpine3.19 as BUILDER
 ADD . /data
 WORKDIR /data
 RUN yarn && yarn build
