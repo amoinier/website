@@ -83,6 +83,7 @@ const CategoriesPart = styled.div`
   display: grid;
   grid-auto-flow: column;
   justify-items: end;
+  grid-gap: 8px;
 
   @media screen and ${config.deviceScreen.laptop} {
     justify-items: center;
