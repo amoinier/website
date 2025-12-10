@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = {
+  parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint", "prettier"],
   extends: [
     "airbnb",
@@ -43,7 +44,12 @@ module.exports = {
   },
   rules: {
     "no-underscore-dangle": 0,
-    "no-restricted-syntax": [0, "ForInStatement", "LabeledStatement", "WithStatement"],
+    "no-restricted-syntax": [
+      0,
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement",
+    ],
     "no-continue": 0,
     "prefer-promise-reject-errors": 0,
     "no-nested-ternary": 0,
