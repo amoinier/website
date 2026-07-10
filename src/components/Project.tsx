@@ -70,7 +70,7 @@ function Project(props: ProjectProps) {
           },
         }),
       ]).catch((err) => {
-        console.log(err);
+        console.error(err);
       });
 
       if (results) {
@@ -84,7 +84,7 @@ function Project(props: ProjectProps) {
     };
 
     getInfo().catch((err) => {
-      console.log(err);
+      console.error(err);
     });
   }, [props.detail.id]);
 

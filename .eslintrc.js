@@ -1,5 +1,3 @@
-const path = require("path");
-
 module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint", "prettier"],
@@ -37,13 +35,11 @@ module.exports = {
       node: {
         extensions: [".js", ".jsx", ".ts", ".tsx", "json"],
       },
-      webpack: {
-        config: path.join(__dirname, "webpack.config.eslint.js"),
-      },
     },
   },
   rules: {
     "no-underscore-dangle": 0,
+    "no-console": ["warn", { allow: ["warn", "error"] }],
     "no-restricted-syntax": [
       0,
       "ForInStatement",
