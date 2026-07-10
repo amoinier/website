@@ -3,7 +3,7 @@ FROM node:20-alpine3.19 AS builder
 ADD . /data
 WORKDIR /data
 ENV DISABLE_ESLINT_PLUGIN=true
-RUN yarn && yarn build
+RUN npm ci && npm run build
 
 FROM nginx:1.15-alpine
 
