@@ -1,12 +1,19 @@
-import { useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
-import Emoji from "react-emoji-render";
+import EmojiRender from "react-emoji-render";
 
 import config from "../config.json";
+import projectsJson from "../projects.json";
 
 import Title from "./Title";
-import { useEffect } from "react";
+
+// react-emoji-render ships CommonJS with `exports.default`. Depending on the
+// bundler's interop the default import is either the component itself or the
+// whole exports object, so unwrap it explicitly.
+const Emoji: typeof EmojiRender =
+  (EmojiRender as unknown as { default?: typeof EmojiRender }).default ?? EmojiRender;
+
+// Generated at build time by scripts/fetch-projects.mjs
+const projects: Record<string, GithubProject> = projectsJson;
 
 const ProjectLink = styled.a`
   display: grid;
@@ -40,53 +47,8 @@ interface ProjectProps {
   };
 }
 
-interface GithubProjectProps {
-  name: string;
-  html_url: string;
-  language: string;
-  description: string;
-  full_name: string;
-  commits: string;
-  stargazers_count: string;
-  forks_count: string;
-}
-
 function Project(props: ProjectProps) {
-  const [project, setProject] = useState<GithubProjectProps | null>(null);
-
-  useEffect(() => {
-    const getInfo = async () => {
-      const results = await Promise.all([
-        axios.get(`https://api.github.com/repositories/${props.detail.id}`, {
-          auth: {
-            username: config.username,
-            password: config.githubToken,
-          },
-        }),
-        axios.get(`https://api.github.com/repositories/${props.detail.id}/contributors`, {
-          auth: {
-            username: config.username,
-            password: config.githubToken,
-          },
-        }),
-      ]).catch((err) => {
-        console.error(err);
-      });
-
-      if (results) {
-        results[0].data.commits = results[1].data.reduce(
-          (total: number, contributor: { contributions: number }) =>
-            total + contributor.contributions,
-          0
-        );
-        setProject(results[0].data);
-      }
-    };
-
-    getInfo().catch((err) => {
-      console.error(err);
-    });
-  }, [props.detail.id]);
+  const project = projects[props.detail.id];
 
   if (!project?.name) {
     return null;

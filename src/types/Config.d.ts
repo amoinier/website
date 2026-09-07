@@ -32,8 +32,6 @@ declare interface ProjectList {
 
 declare interface Config {
   deviceScreen: DeviceScreen;
-  username: string;
-  githubToken: string;
   themeColor: string;
   secondColor: string;
   thirdColor: string;

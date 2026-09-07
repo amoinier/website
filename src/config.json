@@ -9,8 +9,6 @@
     "desktop": "(max-width: 2560px)",
     "desktopL": "(max-width: 2560px)"
   },
-  "username": "amoinier",
-  "githubToken": "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",
   "themeColor": "#F2B42B",
   "secondColor": "#2D9CDB",
   "thirdColor": "#44bd32",
