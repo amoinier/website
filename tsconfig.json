@@ -3,33 +3,25 @@
     "target": "ES2020",
     "module": "esnext",
     "lib": [
-      "es5",
-      "es6",
+      "es2020",
       "dom",
       "dom.iterable"
     ],
     "jsx": "react-jsx",
-    "declaration": true,
-    "sourceMap": true,
-    "outDir": "./dist",
     "strict": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "baseUrl": "./",
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
     "types": [
-      "node",
+      "vite/client"
     ],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
     "noEmit": true,

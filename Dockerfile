@@ -1,11 +1,10 @@
 # Build from other image
-FROM node:20-alpine3.19 AS builder
+FROM node:22-alpine AS builder
 ADD . /data
 WORKDIR /data
-ENV DISABLE_ESLINT_PLUGIN=true
 RUN npm ci && npm run build
 
-FROM nginx:1.15-alpine
+FROM nginx:stable-alpine
 
 # Copy site file
 COPY --from=builder /data/build /usr/share/nginx/html
