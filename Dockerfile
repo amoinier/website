@@ -1,12 +1,25 @@
-# Build from other image
-FROM node:20-alpine3.19 AS builder
-ADD . /data
-WORKDIR /data
-ENV DISABLE_ESLINT_PLUGIN=true
-RUN npm ci && npm run build
+# syntax=docker/dockerfile:1
 
-FROM nginx:1.15-alpine
+FROM node:22.23-alpine AS builder
 
-# Copy site file
-COPY --from=builder /data/build /usr/share/nginx/html
-CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /app
+
+COPY package.json package-lock.json .npmrc ./
+RUN --mount=type=cache,target=/root/.npm \
+    npm ci --no-audit --no-fund
+
+COPY . .
+
+RUN --mount=type=secret,id=github_token \
+    GITHUB_TOKEN="$(cat /run/secrets/github_token 2>/dev/null || true)" \
+    npm run build
+
+FROM nginx:1.30-alpine
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/build /usr/share/nginx/html
+
+EXPOSE 80
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD wget -qO /dev/null http://127.0.0.1/ || exit 1

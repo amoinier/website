@@ -2,23 +2,19 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^14.6.1",
-    "axios": "^1.13.2",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-emoji-render": "^2.0.1",
-    "react-scripts": "5.0.1",
     "styled-components": "^6.1.19"
   },
   "scripts": {
     "eslint": "eslint --ext .jsx,.js,.tsx,.ts src --max-warnings=0",
-    "start": "react-scripts start",
-    "build": "tsc && react-scripts build ./dist",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "fetch-projects": "node scripts/fetch-projects.mjs",
+    "build": "npm run fetch-projects && tsc && vite build",
+    "preview": "vite preview"
   },
   "browserslist": {
     "production": [
@@ -38,15 +34,16 @@
     "@types/styled-components": "^5.1.36",
     "@typescript-eslint/eslint-plugin": "^8.49.0",
     "@typescript-eslint/parser": "^8.49.0",
+    "@vitejs/plugin-react": "^6.1.1",
     "eslint": "^8.57.1",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-import-resolver-webpack": "^0.13.10",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite": "^8.2.2"
   }
 }
