@@ -1,10 +1,3 @@
-// Fetches GitHub metadata for every project listed in src/config.json and
-// writes it to src/projects.json. Runs before `vite build` so the browser
-// never calls the GitHub API and no token ever ships in the bundle.
-//
-// Set GITHUB_TOKEN to authenticate (5000 req/h instead of 60 req/h per IP).
-// A fine-grained token with "Public repositories (read-only)" is enough.
-
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";

@@ -6,13 +6,9 @@ import projectsJson from "../projects.json";
 
 import Title from "./Title";
 
-// react-emoji-render ships CommonJS with `exports.default`. Depending on the
-// bundler's interop the default import is either the component itself or the
-// whole exports object, so unwrap it explicitly.
 const Emoji: typeof EmojiRender =
   (EmojiRender as unknown as { default?: typeof EmojiRender }).default ?? EmojiRender;
 
-// Generated at build time by scripts/fetch-projects.mjs
 const projects: Record<string, GithubProject> = projectsJson;
 
 const ProjectLink = styled.a`
